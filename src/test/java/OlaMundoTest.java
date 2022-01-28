@@ -1,18 +1,13 @@
-import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
-
-import static org.hamcrest.Matchers.*;
-
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.List;
-
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.*;
 
 
 public class OlaMundoTest extends Global {
