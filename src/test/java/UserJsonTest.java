@@ -23,29 +23,6 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 public class UserJsonTest extends Global {
-
-    public static RequestSpecification reqSpec;
-    public static ResponseSpecification resSpec;
-
-    @Autowired
-    public static RequestSpecBuilder reqBuilder;
-
-    @Autowired
-    public static ResponseSpecBuilder resBuilder;
-
-//    @BeforeClass
-//    public static void setup() {
-//        reqBuilder.log(LogDetail.ALL);
-//        reqSpec = reqBuilder.build();
-//
-//        resBuilder.expectStatusCode(200);
-//        resSpec = resBuilder.build();
-//
-//        RestAssured.requestSpecification = reqSpec;
-//        RestAssured.responseSpecification = resSpec;
-//
-//    }
-
     @Test
     public void deveVerificarPrimeiroNivel() {
         given()

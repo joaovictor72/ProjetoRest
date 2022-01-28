@@ -15,25 +15,4 @@ public class Global {
         return "application";
     }
 
-    //public static RequestSpecification reqSpec;
-    //public static ResponseSpecification resSpec;
-
-    //@Autowired
-    //public static RequestSpecBuilder reqBuilder;
-
-    //@Autowired
-    //public static ResponseSpecBuilder resBuilder;
-
-//    @BeforeClass
-//    public static void setup() {
-//        reqBuilder.log(LogDetail.ALL);
-//        reqSpec = reqBuilder.build();
-//
-//        resBuilder.expectStatusCode(200);
-//        resSpec = resBuilder.build();
-//
-//        RestAssured.requestSpecification = reqSpec;
-//        RestAssured.responseSpecification = resSpec;
-//
-//    }
 }
