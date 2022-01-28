@@ -129,5 +129,4 @@ public class UserJsonTest extends Global {
         assertEquals(names.get(0).toUpperCase(), "mAria JoAQUINA".toUpperCase());
     }
 
-
 }

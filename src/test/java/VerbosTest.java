@@ -1,4 +1,7 @@
 import org.junit.jupiter.api.Test;
+import java.util.HashMap;
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
@@ -89,6 +92,44 @@ public class VerbosTest extends Global {
                     .statusCode(400)
                     .body("error", is("Registro inexistente"));
 
+    }
+
+    @Test
+    public void deveSalvarUsuarioMap() {
+        Map<String, Object> param = new HashMap<String, Object>();
+        param.put("name", "Usuario via map");
+        param.put("age", 25);
+
+        given()
+                    .log().all()
+                    .contentType(getApplication() + "/json")
+                    .body(param)
+                .when()
+                    .post(getBaseURL() + "/users")
+                .then()
+                    .log().all()
+                    .statusCode(201)
+                    .body("id", is(notNullValue()))
+                    .body("name", is("Usuario via map"))
+                    .body("age", is(25));
+    }
+
+    @Test
+    public void deveSalvarUsuarioObjeto() {
+        User user = new User("Usuario via objeto", 35);
+
+        given()
+                    .log().all()
+                    .contentType(getApplication() + "/json")
+                    .body(user)
+                .when()
+                    .post(getBaseURL() + "/users")
+                .then()
+                    .log().all()
+                    .statusCode(201)
+                    .body("id", is(notNullValue()))
+                    .body("name", is("Usuario via objeto"))
+                    .body("age", is(35));
     }
 }
 
