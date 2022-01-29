@@ -1,3 +1,5 @@
+package global;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,7 +31,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "global.User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +

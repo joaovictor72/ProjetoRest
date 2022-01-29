@@ -1,3 +1,6 @@
+package rascunho;
+
+import global.Global;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;

@@ -1,3 +1,5 @@
+import global.Global;
+import global.User;
 import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
