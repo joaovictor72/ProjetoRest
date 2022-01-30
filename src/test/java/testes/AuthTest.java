@@ -34,4 +34,41 @@ public class AuthTest extends Global {
                     .body("coord.lon", is(-51.9386f))
                     .body("main.temp", greaterThan(25f));
     }
+    // CERTIFICADO DO SITE DA API TESTADA EXPIROU DIA 29/01/2022
+    @Test
+    public void naoDeveAcessarSemSenha() {
+        given()
+                    .log().all()
+                .when()
+                    .get(getBaseURL() + "/basicauth")
+                .then()
+                    .log().all()
+                    .statusCode(400);
+    }
+    // CERTIFICADO DO SITE DA API TESTADA EXPIROU DIA 29/01/2022
+    @Test
+    public void deveFazerAutenticacaoBasica(){
+        given()
+                    .log().all()
+                    .auth().basic("admin", "senha")
+                .when()
+                    .get(getBaseURL() + "/basicauth")
+                .then()
+                    .log().all()
+                    .statusCode(200)
+                    .body("status", is("logado"));
+    }
+    // CERTIFICADO DO SITE DA API TESTADA EXPIROU DIA 29/01/2022
+    @Test
+    public void deveFazerAutenticacaoBasicaComChallenge(){
+        given()
+                    .log().all()
+                    .auth().preemptive().basic("admin", "senha")
+                .when()
+                    .get(getBaseURL() + "/basicauth2")
+                .then()
+                    .log().all()
+                    .statusCode(200)
+                    .body("status", is("logado"));
+    }
 }

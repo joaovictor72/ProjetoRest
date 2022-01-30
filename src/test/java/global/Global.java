@@ -11,6 +11,10 @@ public class Global {
     public String getBaseClima() {
         return "https://api.openweathermap.org/data/2.5/weather";
     }
+
+    public String getSeuBarrigaAPI() {
+        return "http://barrigarest.wcaquino.me";
+    }
     public String getApplication () {
         return "application";
     }
