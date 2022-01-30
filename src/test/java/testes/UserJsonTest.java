@@ -1,3 +1,4 @@
+package testes;
 import global.Global;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
@@ -14,7 +15,7 @@ public class UserJsonTest extends Global {
     @Test
     public void deveVerificarPrimeiroNivel() {
         given()
-                .log().all()
+                    .log().all()
                 .when()
                     .get(getBaseURL() + "/users/1")
                 .then()

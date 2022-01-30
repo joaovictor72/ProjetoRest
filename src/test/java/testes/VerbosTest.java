@@ -1,3 +1,5 @@
+package testes;
+
 import global.Global;
 import global.User;
 import org.junit.jupiter.api.Test;
